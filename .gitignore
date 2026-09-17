@@ -1,0 +1,13 @@
+# Zugangsdaten - niemals einchecken
+.env
+*.env
+!.env.example
+
+# lokale Kopien der Apache-Konfiguration (enthalten die konkrete Domain)
+apache-servername.conf
+
+# Tooling des container-templates-Repos
+node_modules/
+
+# macOS
+.DS_Store

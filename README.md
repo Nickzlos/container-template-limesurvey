@@ -97,6 +97,23 @@ Dass das ohne root funktioniert, liegt am Image — `/etc/apache2/conf-enabled`
 gehört dort `www-data`. Bei einem Domainwechsel entsteht die Datei beim nächsten
 Start automatisch neu, weil sie aus `${HOST}` gebaut wird.
 
+## Lizenz und Marke
+
+**GPL-2.0-or-later** deckt alles ab, was diese Vorlage tut — containerisieren,
+hosten, kommerziell betreiben, die Vorlage kostenlos weitergeben. Dafür braucht
+es keine Rückfrage. Die Vorlage verweist nur auf ein fertiges Image und
+verteilt selbst keinen LimeSurvey-Code; die GPL-Pflichten liegen beim
+Herausgeber des Images.
+
+**Die Marke ist die offene Frage.** Name und Logo sind geschützt, und die
+[Trademark Policy](https://community.limesurvey.org/licence-trademark/) verlangt
+eine vorherige schriftliche Genehmigung der LimeSurvey GmbH, wenn beides für
+„LimeSurvey Hosting" oder „LimeSurvey Installations" oder als Name eines
+Softwarepakets verwendet wird. Ein Katalogeintrag mit sichtbarem Namen und
+`icon.svg` fällt darunter. Also vor der Aufnahme in den öffentlichen Katalog
+einholen und dokumentieren. Keine Rechtsberatung — aber die Richtlinie ist an
+dieser Stelle deutlich.
+
 ## Vorlage einreichen
 
 ```bash

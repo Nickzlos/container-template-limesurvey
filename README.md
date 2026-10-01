@@ -22,18 +22,20 @@ Installations-Assistenten ein.
 
 | Service | Image | Port | Volume |
 |---|---|---|---|
-| `limesurvey` | `martialblog/limesurvey:7.0.13-260903-apache` | 8080 → Domain | `limesurvey_upload` |
+| `limesurvey` | `martialblog/limesurvey:7-apache` | 8080 → Domain | `limesurvey_upload` |
 | `postgres` | `pgautoupgrade/pgautoupgrade:18-alpine` | — | `postgres_data` |
 
 ## Entscheidungen, die nicht offensichtlich sind
 
-**Der Image-Tag ist exakt gepinnt, nicht auf den Major.** Die Konvention des
-Repos wäre `7-apache`. Build `7.0.15-260910` liefert jedoch eine
-`editor/index.html` aus, die Asset-Hashes aus einem älteren Build referenziert;
-vier der acht Dateien fehlen im Image, der React-Editor bleibt weiß. Gemeldet
-als [martialblog/docker-limesurvey#318](https://github.com/martialblog/docker-limesurvey/issues/318),
-noch offen. Sobald ein korrigierter Build erscheint: prüfen und auf den
-Major-Tag zurückgehen.
+**Der Image-Tag steht auf dem Major, nicht auf einem festen Build.** Das
+entspricht der Konvention des Repos und hat einen Preis: `7-apache` ist
+beweglich. Build `7.0.15-260910` lieferte eine `editor/index.html` aus, die
+Asset-Hashes eines älteren Builds referenzierte — vier von acht Dateien fehlten
+im Image, der React-Editor blieb weiß
+([martialblog/docker-limesurvey#318](https://github.com/martialblog/docker-limesurvey/issues/318),
+upstream behoben in 7.1.0). Wer automatische Image-Updates einrichtet, holt sich
+dieses Risiko zurück; bei einer Instanz mit echten Antworten ist ein geplantes
+Update die ruhigere Wahl.
 
 **`PUBLIC_URL` und `HOST_INFO` sind gesetzt.** Vor dem Container terminiert der
 Ingress das TLS. Ohne diese beiden Variablen baut LimeSurvey interne Links aus

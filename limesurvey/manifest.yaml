@@ -2,7 +2,7 @@ manifestVersion: 1.0
 name:
   de: LimeSurvey
   en: LimeSurvey
-version: "7.0.13"
+version: "7.x.x"
 type: standalone
 tagline:
   de: Umfrageplattform für Online-Befragungen und Formulare

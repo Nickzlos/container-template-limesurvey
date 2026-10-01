@@ -3,11 +3,7 @@
 #   mw stack deploy -c docker-compose.yml --env-file .env
 services:
   limesurvey:
-    # Fester Tag statt "7-apache": Build 7.0.15-260910 liefert eine
-    # editor/index.html aus, die auf nicht vorhandene Asset-Hashes verweist -
-    # der React-Editor bleibt weiß. Siehe
-    # https://github.com/martialblog/docker-limesurvey/issues/318
-    image: martialblog/limesurvey:7.0.13-260903-apache
+    image: martialblog/limesurvey:7-apache
     # The upload volume starts out empty: the platform does not seed it from
     # the image, and neither entrypoint nor application create the layout.
     # Without these directories every upload fails with "Could not save file".

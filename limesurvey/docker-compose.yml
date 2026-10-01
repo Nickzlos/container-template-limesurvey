@@ -1,11 +1,6 @@
 services:
   limesurvey:
-    # Pinned to an exact build instead of the floating "7-apache" tag:
-    # build 7.0.15-260910 ships an editor/index.html that references asset
-    # hashes missing from the image, which breaks the React survey editor.
-    # See https://github.com/martialblog/docker-limesurvey/issues/318
-    # Move back to a major tag once a fixed build is published.
-    image: martialblog/limesurvey:7.0.13-260903-apache
+    image: martialblog/limesurvey:7-apache
     # The upload volume starts out empty: the platform does not seed it from
     # the image, and neither entrypoint nor application create the layout.
     # Without these directories every upload fails with "Could not save file".
